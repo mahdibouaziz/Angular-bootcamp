@@ -8,14 +8,16 @@
         <div class="user">
           <img
             class="img-circle"
-            src="assets/images/{{ personne.path | defaultImage }}"
+            src="assets/images/{{ clickedPersonne.path }}"
           />
         </div>
         <div class="content">
           <div class="main">
-            <h3 class="name">{{ personne.firstname }}</h3>
-            <p class="profession">{{ personne.job }}</p>
-            <p class="text-center">{{ personne.cin }}</p>
+            <h3 class="name">
+              {{ clickedPersonne.name }} {{ clickedPersonne.firstname }}
+            </h3>
+            <p class="profession">{{ clickedPersonne.job }}</p>
+            <p class="text-center">{{ clickedPersonne.cin }}</p>
           </div>
           <div class="footer">
             <i class="fa fa-mail-forward"></i> Auto Rotation

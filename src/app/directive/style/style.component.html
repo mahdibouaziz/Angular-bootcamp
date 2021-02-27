@@ -1,10 +1,18 @@
-<p [ngStyle]="{
-  'color':color,
-  'backgroundColor':bgColor,
-  'font-size':size
-}">style works!</p>
+<p
+  [ngStyle]="{
+    color: color,
+    backgroundColor: bgColor,
+    'font-size': size
+  }"
+>
+  style works!
+</p>
 
-<input type="text" class="form-control" [(ngModel)]="color">
+<input type="text" class="form-control" [(ngModel)]="color" />
 
-
-<input type="number" #sizeInput (change)="changeSize(sizeInput.value)" class="form-control">
+<input
+  type="number"
+  #sizeInput
+  (change)="changeSize(sizeInput.value)"
+  class="form-control"
+/>

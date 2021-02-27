@@ -9,6 +9,8 @@ export class ClassComponent implements OnInit {
   est = true;
   barca = false;
   milan = false;
+  show = true;
+  teams = ['est', 'om', 'barca', 'milan'];
 
   constructor() {}
 

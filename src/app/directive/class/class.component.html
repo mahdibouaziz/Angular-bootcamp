@@ -6,4 +6,12 @@
 
 <div appHighlight>Bonjour je test une directive</div>
 
-<input type="text" appRainbow class="form-control" />
+<button class="btn btn-secondary" (click)="show = !show">show</button>
+
+<input *ngIf="show" type="text" appRainbow class="form-control" />
+
+<ol class="list-group">
+  <li class="list-group-item" *ngFor="let team of teams; let ind = index">
+    {{ team }} - {{ ind }}
+  </li>
+</ol>
