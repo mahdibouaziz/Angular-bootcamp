@@ -23,6 +23,7 @@ import { Liste2Component } from './cvTechV2/liste2/liste2.component';
 import { Class2Component } from './directive2/class2/class2.component';
 import { Style2Component } from './directive2/style2/style2.component';
 import { DefaultImagePipe } from './cvTech/default-image.pipe';
+import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { DefaultImagePipe } from './cvTech/default-image.pipe';
     Class2Component,
     Style2Component,
     DefaultImagePipe,
+    EmbaucheComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],

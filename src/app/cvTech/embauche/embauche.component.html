@@ -1,0 +1,12 @@
+<divb *ngIf="personnes">
+  <span *ngFor="let personne of personnes">
+    <img
+      src="assets/images/{{ personne.path | defaultImage }}"
+      alt="{{ personne.name }}"
+      class="rounded-circle"
+      width="150px"
+      height="150px"
+    />
+    {{ personne.name | titlecase }} {{ personne.firstname | titlecase }}
+  </span>
+</divb>
