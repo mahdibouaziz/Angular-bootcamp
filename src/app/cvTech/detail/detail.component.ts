@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Personne } from '../../Model/Personne';
 import { EmbaucheService } from '../embauche.service';
 
@@ -10,10 +11,17 @@ import { EmbaucheService } from '../embauche.service';
 export class DetailComponent implements OnInit {
   @Input() personne: Personne;
 
-  constructor(private embaucheService: EmbaucheService) {}
+  constructor(
+    private embaucheService: EmbaucheService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
   embaucher(): void {
     this.embaucheService.embaucher(this.personne);
+  }
+  moreInfo(): void {
+    const link = ['cv', this.personne.id];
+    this.router.navigate(link);
   }
 }

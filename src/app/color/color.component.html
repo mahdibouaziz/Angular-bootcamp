@@ -1,10 +1,14 @@
 <div [style.backgroundColor]="color">
-<p>color</p>
+  <p>color</p>
 </div>
 
-<input [(ngModel)]="color"  type="text" class="from-control">
+<input [(ngModel)]="color" type="text" class="from-control" />
 
+le contenu de la prop color est {{ color }}
 
-le contenu de la prop color est {{color}}
-
-<app-fils-color (sendRequestToData)="processReq($event)" [filsProperty]="color" ></app-fils-color>
+<app-fils-color
+  (sendRequestToData)="processReq($event)"
+  [filsProperty]="color"
+></app-fils-color>
+<br />
+<a class="btn btn-danger" (click)="goToCv()">Go to CV</a>

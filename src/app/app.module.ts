@@ -24,6 +24,12 @@ import { Class2Component } from './directive2/class2/class2.component';
 import { Style2Component } from './directive2/style2/style2.component';
 import { DefaultImagePipe } from './cvTech/default-image.pipe';
 import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
+import { ROUTING } from './app.rounting';
+import { HeaderComponent } from './header/header.component';
+import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
+import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
+import { AddCvComponent } from './cvTech/add-cv/add-cv.component';
+import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +55,13 @@ import { EmbaucheComponent } from './cvTech/embauche/embauche.component';
     Style2Component,
     DefaultImagePipe,
     EmbaucheComponent,
+    HeaderComponent,
+    RouterSimulatorComponent,
+    DetailCvComponent,
+    AddCvComponent,
+    DeleteCvComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, ROUTING],
   providers: [],
   bootstrap: [AppComponent],
 })
