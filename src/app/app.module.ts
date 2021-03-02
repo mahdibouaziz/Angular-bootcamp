@@ -30,6 +30,7 @@ import { RouterSimulatorComponent } from './router-simulator/router-simulator.co
 import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
 import { AddCvComponent } from './cvTech/add-cv/add-cv.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
     DetailCvComponent,
     AddCvComponent,
     DeleteCvComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, ROUTING],
   providers: [],

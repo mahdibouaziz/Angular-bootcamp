@@ -1,0 +1,35 @@
+<form #loginFormulaire="ngForm">
+  <label for="email">Email</label>
+  <input
+    type="text"
+    id="email"
+    class="form-control"
+    name="email"
+    ngModel
+    email
+    required
+  />
+
+  <label for="password">Password</label>
+  <input
+    type="password"
+    id="password"
+    class="form-control"
+    name="password"
+    #pwdInput="ngModel"
+    ngModel
+    required
+    minlength="4"
+  />
+  <div class="alert alert-danger" *ngIf="pwdInput.invalid && pwdInput.touched">
+    Min 4 caracteres
+  </div>
+
+  <button
+    [disabled]="loginFormulaire.invalid"
+    class="btn btn-primary"
+    (click)="login(loginFormulaire)"
+  >
+    Log In
+  </button>
+</form>
