@@ -2,5 +2,14 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "MahdiDb": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "password": "",
+    "user": "root",
+    "connector": "mysql",
+    "database": "anguforma"
   }
 }
