@@ -12,12 +12,39 @@ export class DetailCvComponent implements OnInit {
   personne: Personne;
   constructor(
     private cvService: CvService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.personne = this.cvService.getPersonneById(+params.id);
+      this.cvService.getPersonneById(+params.id).subscribe(
+        (response) => {
+          console.log('respinse in details: ', response);
+          this.personne = response;
+        },
+        (error) => {
+          console.log('An error has benn occurs in detils');
+        },
+        () => {
+          console.log('Details Cv Completed');
+        }
+      );
     });
+  }
+
+  deletePersonne(): void {
+    this.cvService.deletePersonne(this.personne.id).subscribe(
+      (response) => {
+        console.log('response in delete: ', response);
+        this.router.navigate(['cv']);
+      },
+      (error) => {
+        console.log('error in delete: ', error);
+      },
+      () => {
+        console.log('Delete Completed');
+      }
+    );
   }
 }

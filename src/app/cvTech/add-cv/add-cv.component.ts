@@ -14,8 +14,18 @@ export class AddCvComponent implements OnInit {
   ngOnInit(): void {}
 
   addPersonne(formulaire): void {
-    console.log(formulaire);
-    this.cvService.addPersonne(formulaire.value);
-    this.router.navigate(['cv']);
+    // this.cvService.addPersonne(formulaire.value);
+    this.cvService.addPersonne(formulaire.value).subscribe(
+      (response) => {
+        console.log('Person added with sucess');
+        this.router.navigate(['cv']);
+      },
+      (error) => {
+        console.log('error when addeding person: ', error);
+      },
+      () => {
+        console.log('Addeding completed');
+      }
+    );
   }
 }

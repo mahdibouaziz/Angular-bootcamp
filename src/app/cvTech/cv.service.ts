@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Personne } from '../Model/Personne';
 
 @Injectable({
@@ -6,25 +8,28 @@ import { Personne } from '../Model/Personne';
 })
 export class CvService {
   private personnes: Personne[];
+  link = 'http://localhost:3000/api/personnes';
 
-  constructor() {
-    this.personnes = [
-      new Personne(1, 'mahdi', 'ben hlima', 21, 'ok.png', 1111, 'student'),
-      new Personne(2, 'mohamed', 'abdalah', 22, 'ok1.png', 2222, 'ok'),
-      new Personne(3, 'mahdi', 'behy', 23, 'ok2.png', 3333, 'sent'),
-      new Personne(4, 'test', 'qsdsqd', 23, '', 3333, 'sent'),
-    ];
+  constructor(private http: HttpClient) {}
+
+  // Nos Observables
+  getPersonnes(): Observable<Personne[]> {
+    // http://localhost:3000/api/personnes
+    return this.http.get<Personne[]>(this.link);
   }
 
-  getPersonnes(): Personne[] {
-    return this.personnes;
+  getPersonneById(id: number): Observable<Personne> {
+    // http://localhost:3000/api/personnes/{id}
+    return this.http.get<Personne>(this.link + `/${id}`);
   }
 
-  getPersonneById(id: number): Personne {
-    return this.personnes.find((per) => per.id === id);
+  addPersonne(personne: Personne): Observable<Personne> {
+    // http://localhost:3000/api/personnes
+    return this.http.post<Personne>(this.link, personne);
   }
-  addPersonne(personne: Personne): void {
-    personne.id = this.personnes.length + 1;
-    this.personnes.push(personne);
+
+  deletePersonne(id: number): Observable<any> {
+    // http://localhost:3000/api/personnes/{id}
+    return this.http.delete(this.link + `/${id}`);
   }
 }
