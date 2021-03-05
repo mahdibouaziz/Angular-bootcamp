@@ -35,6 +35,7 @@ import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { loginInterceptorProvider } from './interceptor/login.interceptor';
 import { UpdateCvComponent } from './cvTech/update-cv/update-cv.component';
+import { SearchComponent } from './cvTech/search/search.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { UpdateCvComponent } from './cvTech/update-cv/update-cv.component';
     ObservableComponent,
     HttpComponent,
     UpdateCvComponent,
+    SearchComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, ROUTING],
   providers: [loginInterceptorProvider],

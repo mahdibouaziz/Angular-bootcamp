@@ -1,0 +1,22 @@
+<input
+  type="text"
+  #inputSearch
+  (keyup)="search(inputSearch.value)"
+  class="form-control"
+/>
+
+<ol>
+  <li
+    *ngFor="let personne of searchResult"
+    (click)="selectPersonne(personne)"
+    class="list-group-item"
+  >
+    <img
+      src="assets/images/{{ personne.path | defaultImage }}"
+      alt="{{ personne?.name }}"
+      width="20px"
+      height="20px"
+    />
+    {{ personne?.name | titlecase }} {{ personne?.firstname | titlecase }}
+  </li>
+</ol>
