@@ -28,7 +28,7 @@ export class ObservableComponent implements OnInit {
 
     /* Notre observer */
     this.monObservable.subscribe((result) => {
-      console.log(result);
+      // console.log(result);
       this.currentImage = result;
     });
   }

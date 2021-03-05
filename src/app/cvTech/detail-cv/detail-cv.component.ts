@@ -20,7 +20,7 @@ export class DetailCvComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.cvService.getPersonneById(+params.id).subscribe(
         (response) => {
-          console.log('respinse in details: ', response);
+          // console.log('respinse in details: ', response);
           this.personne = response;
         },
         (error) => {
@@ -36,7 +36,7 @@ export class DetailCvComponent implements OnInit {
   deletePersonne(): void {
     this.cvService.deletePersonne(this.personne.id).subscribe(
       (response) => {
-        console.log('response in delete: ', response);
+        // console.log('response in delete: ', response);
         this.router.navigate(['cv']);
       },
       (error) => {
@@ -46,5 +46,10 @@ export class DetailCvComponent implements OnInit {
         console.log('Delete Completed');
       }
     );
+  }
+
+  updatePersonne(): void {
+    const link = ['cv/updateCv', this.personne.id];
+    this.router.navigate(link);
   }
 }

@@ -37,4 +37,8 @@ export class CvService {
     // http://localhost:3000/api/personnes/{id}
     return this.http.delete(this.link + `/${id}`);
   }
+  updateCvPersonne(personne: Personne): Observable<Personne> {
+    // console.log('CV SERVICE', personne);
+    return this.http.put<Personne>(this.link, personne);
+  }
 }

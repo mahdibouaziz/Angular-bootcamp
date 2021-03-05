@@ -18,7 +18,7 @@ export class CvComponent implements OnInit {
     // Notre Observateur
     this.cvService.getPersonnes().subscribe(
       (response) => {
-        console.log('Response: ', response);
+        // console.log('Response: ', response);
         this.personnes = response;
         this.selectedPersonne = this.personnes[0];
       },

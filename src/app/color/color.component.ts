@@ -12,7 +12,7 @@ export class ColorComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      console.log(params);
+      // console.log(params);
       this.color = params.maCouleur;
     });
   }

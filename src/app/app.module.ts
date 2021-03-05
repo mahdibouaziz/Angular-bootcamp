@@ -29,12 +29,12 @@ import { HeaderComponent } from './header/header.component';
 import { RouterSimulatorComponent } from './router-simulator/router-simulator.component';
 import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
 import { AddCvComponent } from './cvTech/add-cv/add-cv.component';
-import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
 import { loginInterceptorProvider } from './interceptor/login.interceptor';
+import { UpdateCvComponent } from './cvTech/update-cv/update-cv.component';
 
 @NgModule({
   declarations: [
@@ -64,10 +64,10 @@ import { loginInterceptorProvider } from './interceptor/login.interceptor';
     RouterSimulatorComponent,
     DetailCvComponent,
     AddCvComponent,
-    DeleteCvComponent,
     LoginComponent,
     ObservableComponent,
     HttpComponent,
+    UpdateCvComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, ROUTING],
   providers: [loginInterceptorProvider],

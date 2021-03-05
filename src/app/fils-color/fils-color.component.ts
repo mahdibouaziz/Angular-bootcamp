@@ -11,7 +11,7 @@ export class FilsColorComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('fils component:', this.filsProperty);
+    // console.log('fils component:', this.filsProperty);
   }
   sendEvent() {
     this.sendRequestToData.emit('test tif this works');

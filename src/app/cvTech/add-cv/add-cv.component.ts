@@ -17,7 +17,7 @@ export class AddCvComponent implements OnInit {
     // this.cvService.addPersonne(formulaire.value);
     this.cvService.addPersonne(formulaire.value).subscribe(
       (response) => {
-        console.log('Person added with sucess');
+        // console.log('Person added with sucess');
         this.router.navigate(['cv']);
       },
       (error) => {
