@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Personne } from '../Model/Personne';
@@ -25,6 +25,11 @@ export class CvService {
 
   addPersonne(personne: Personne): Observable<Personne> {
     // http://localhost:3000/api/personnes
+    /*  const token = localStorage.getItem('token');
+    if (token) {
+      const params = new HttpParams().set('access_token', token);
+      return this.http.post<Personne>(this.link, personne, { params });
+    } */
     return this.http.post<Personne>(this.link, personne);
   }
 

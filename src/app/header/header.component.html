@@ -8,10 +8,15 @@
     aria-controls="navbarNavAltMarkup"
     aria-expanded="false"
     aria-label="Toggle navigation"
+    (click)="show()"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div
+    class="collapse navbar-collapse"
+    [ngClass]="{ show: visibility }"
+    id="navbarNavAltMarkup"
+  >
     <div class="navbar-nav">
       <a
         class="nav-item nav-link"
@@ -28,6 +33,7 @@
       </a>
 
       <a
+        *ngIf="authentificationService.isLogged()"
         class="nav-item nav-link"
         routerLinkActive="activee"
         [routerLink]="['cv/add']"
@@ -41,10 +47,17 @@
         >Color</a
       >
       <a
+        *ngIf="!authentificationService.isLogged()"
         class="nav-item nav-link"
         routerLinkActive="activee"
         [routerLink]="['login']"
         >Login</a
+      >
+      <a
+        *ngIf="authentificationService.isLogged()"
+        class="nav-item nav-link"
+        (click)="logout()"
+        >Logout</a
       >
     </div>
   </div>

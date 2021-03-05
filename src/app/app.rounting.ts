@@ -4,19 +4,25 @@ import { AddCvComponent } from './cvTech/add-cv/add-cv.component';
 import { CvComponent } from './cvTech/cv/cv.component';
 import { DeleteCvComponent } from './cvTech/delete-cv/delete-cv.component';
 import { DetailCvComponent } from './cvTech/detail-cv/detail-cv.component';
+import { LoginGuard } from './guard/login.guard';
+import { LogoutGuard } from './guard/logout.guard';
 import { LoginComponent } from './login/login.component';
 
 const APP_ROUTING: Routes = [
   {
     path: 'cv',
     children: [
-      { path: 'add', component: AddCvComponent },
-      { path: 'delete/:id', component: DeleteCvComponent },
+      { path: 'add', component: AddCvComponent, canActivate: [LoginGuard] },
+      {
+        path: 'delete/:id',
+        component: DeleteCvComponent,
+        canActivate: [LoginGuard],
+      },
       { path: ':id', component: DetailCvComponent },
       { path: '', component: CvComponent },
     ],
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LogoutGuard] },
   { path: '', component: CvComponent },
   { path: 'color/:maCouleur', component: ColorComponent },
   { path: '**', component: CvComponent },

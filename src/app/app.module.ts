@@ -34,6 +34,7 @@ import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
 import { HttpComponent } from './http/http.component';
 import { HttpClientModule } from '@angular/common/http';
+import { loginInterceptorProvider } from './interceptor/login.interceptor';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, ROUTING],
-  providers: [],
+  providers: [loginInterceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

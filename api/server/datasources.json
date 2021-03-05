@@ -7,9 +7,10 @@
     "host": "localhost",
     "port": 3306,
     "url": "",
+    "database": "anguforma",
     "password": "",
+    "name": "MahdiDb",
     "user": "root",
-    "connector": "mysql",
-    "database": "anguforma"
+    "connector": "mysql"
   }
 }

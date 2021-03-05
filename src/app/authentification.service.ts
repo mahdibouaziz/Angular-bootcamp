@@ -8,7 +8,15 @@ import { Observable } from 'rxjs';
 export class AuthentificationService {
   link = 'http://localhost:3000/api/Users/login';
   constructor(private http: HttpClient) {}
+
+  isLogged(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
   login(credentials): Observable<any> {
     return this.http.post(this.link, credentials);
+  }
+  logout(): void {
+    localStorage.removeItem('token');
   }
 }
